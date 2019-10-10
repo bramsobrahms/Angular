@@ -1,0 +1,25 @@
+<h1>Shopping list</h1>
+
+<input nbInput type="text" [(ngModel)]="item" placeholder="Veuillez entrez un aliment">
+<p>{{item}}</p>
+
+<button nbButton outline status="success" (click)="add()" [disabled]="!item">Add</button>
+<button nbButton outline status="warning" (click)="removeLast()">suppLast</button>
+<button nbButton outline status="danger" (click)="removeAll()" *ngIf="toDelete.length>0">RemoveAll</button>
+
+<nb-card>
+    <nb-list>
+        <nb-list-item *ngFor="let list of lists; let i = index; let i = index"> 
+            <p style="display: flex; justify-content: space-between" [ngClass]="{ 'text-blue': odd }">
+                {{ list | uppercase }}
+                <button nbButton
+                        size="tiny"
+                        status="warning"
+                        (click)="remove(i)">
+                    <nb-icon icon="trash"></nb-icon>
+                </button>
+                <nb-checkbox (change)="onChange(list,$event)"></nb-checkbox>
+            </p>
+        </nb-list-item>
+</nb-list>
+</nb-card>

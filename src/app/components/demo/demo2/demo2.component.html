@@ -1,0 +1,19 @@
+<span (mouseover)="onMouseOver()">Survolez ici </span>
+<p>{{ compteur }}</p>
+<nb-card>
+    <nb-card-header>
+        {{compteur2}}
+    </nb-card-header>
+     <nb-card-body>
+         <button (click)="increase()"
+         [disabled]="compteur2>8"
+         nbButton
+         status="success"
+         outline>+</button>
+         <button (click)="decrease()"
+         [disabled]="compteur2 < 1"
+         nbButton
+         status="info"
+         outline>-</button>
+     </nb-card-body>   
+</nb-card>

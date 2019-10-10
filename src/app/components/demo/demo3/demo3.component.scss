@@ -1,0 +1,15 @@
+// .isClickable{
+//     cursor: pointer;
+// }
+
+// .isClickable:hover{
+//     color:orange;
+// }
+
+.isClickable{
+    cursor: pointer;
+
+    &:hover{
+        color:orange;
+    }
+}

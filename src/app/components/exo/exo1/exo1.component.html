@@ -1,0 +1,17 @@
+<h1>Ici on retrouve le interval </h1>
+
+<nb-card>
+        <nb-card-header>
+            {{compteur}}
+        </nb-card-header>
+         <nb-card-body>
+             <button (click)="btnStar()"
+             [disabled]="this.boolean==true"
+             status="">Start</button>
+             <button (click)="btnStop()"
+             [disabled]="boolean==false">Stop</button>
+             <button (click)="btnReset()"
+             [disabled]="compteur == 0 || boolean== false">Reset</button>
+     
+         </nb-card-body>   
+    </nb-card>
